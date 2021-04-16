@@ -252,10 +252,17 @@ div.todoList>h1>span {
     transition-delay: 0.28s;
 }
 
-.pin {
-    width: 3.5%;
+.unPin {
+    width: 4%;
     transform: rotate(-45deg);
     filter: invert(.5);
+    transition: all .3s;
+    cursor: pointer;
+}
+.pin {
+    width: 4%;
+    transform: rotate(45deg);
+    filter: invert(0);
     transition: all .3s;
     cursor: pointer;
 }

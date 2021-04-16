@@ -7,6 +7,7 @@ const Tasks = (props) => {
             <div className='listTitle'>
                 <p>Task Name</p>
                 <p>Priority</p>
+                <p>Pin</p>
             </div>
             <div className="taskWapper">
                 {props.filteredTodos.map((item) => (

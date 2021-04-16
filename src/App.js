@@ -28,13 +28,12 @@ function App() {
 
     useEffect(() => {
 
-        const filterHandler = () => {
-            let newTodos = status == "0" ? todos : todos.filter(todo => todo.priority == status);
-            setFilteredTodos(newTodos);
-        };
-        setFilteredTodos(sortByKey(todos, 'priority', false));
-        setFilteredTodos(sortByKey(todos, 'completed', true));
-        filterHandler();
+        let newTodos = status == "0" ? todos : todos.filter(todo => todo.priority == status);
+        newTodos = sortByKey(newTodos, 'priority', false);
+        newTodos = sortByKey(newTodos, 'completed', true);
+        newTodos = sortByKey(newTodos, 'pin', false);
+        setFilteredTodos(newTodos);
+
     }, [todos, status]);
 
 

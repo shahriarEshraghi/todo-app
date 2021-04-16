@@ -13,6 +13,7 @@ const Form = (props) => {
             ...props.todos,{
                 text: props.inputText,
                 completed:false,
+                pin: false,
                 priority:props.priority,
                 id:Math.random()*1000
             }

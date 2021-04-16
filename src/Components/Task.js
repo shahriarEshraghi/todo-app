@@ -1,4 +1,5 @@
 import React from 'react';
+import pin from '../Assets/image/push-pin.svg';
 
 
 
@@ -10,12 +11,25 @@ import React from 'react';
                         ...item,
                         completed: !item.completed,
                     };
-
                 }
                 return item;
             })
         );
     };
+
+     const pinHandler = () => {
+         props.setTodos( props.todos.map((item) => {
+                 if (item.id === props.todo.id) {
+                     return {
+                         ...item,
+                         pin: !item.pin,
+                     };
+                 }
+                 return item;
+             })
+         );
+     };
+
     return (
         <React.Fragment>
             <div className={`checkbox ${props.todo.completed ? "completed" : ""}`}>
@@ -26,6 +40,7 @@ import React from 'react';
                 </label>
 
                 <label>{props.priorityText}</label>
+                <img src={pin} onClick={pinHandler}  className={props.todo.pin ? "pin" : "unPin"}/>
 
             </div>
         </React.Fragment>
