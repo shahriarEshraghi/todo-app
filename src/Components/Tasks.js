@@ -5,9 +5,9 @@ const Tasks = (props) => {
     return (
         <React.Fragment>
             <div className='listTitle'>
-                <p>Task Name</p>
-                <p>Priority</p>
-                <p>Pin</p>
+                <p className={'task-text'}>Task Name</p>
+                <p className={'priority-title'}>Priority</p>
+                <p className={'pin-width'}>Pin</p>
             </div>
             <div className="taskWapper">
                 {props.filteredTodos.map((item) => (

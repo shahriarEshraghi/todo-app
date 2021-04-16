@@ -33,13 +33,13 @@ import pin from '../Assets/image/push-pin.svg';
     return (
         <React.Fragment>
             <div className={`checkbox ${props.todo.completed ? "completed" : ""}`}>
-                <label >
+                <label className={'task-text'} >
                     <input type="checkbox" onClick={completeHandler} />
                     <i className="CheckIcon"></i>
                     {props.text}
                 </label>
 
-                <label>{props.priorityText}</label>
+                <label className={'priority-text'}  >{props.priorityText}</label>
                 <img src={pin} onClick={pinHandler}  className={props.todo.pin ? "pin" : "unPin"}/>
 
             </div>

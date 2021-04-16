@@ -68,7 +68,7 @@ div.todoList>h1>span {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin: 2rem 1rem;
+    margin: 2rem auto;
     width: 40%;
 }
 
@@ -155,7 +155,10 @@ div.todoList>h1>span {
     text-decoration:line-through;
     opacity: 0.5;
 }
-
+div.checkbox > label.priority-text{
+    width: 45%;
+    padding-left:0;
+}
 .checkbox label {
     position: relative;
     cursor: pointer;
@@ -354,3 +357,33 @@ div.todoList>h1>span {
     height: 10px;
     background-color: red;
 }
+.task-text{
+    width: 40%;
+    overflow: hidden;
+}
+.priority-title{
+    width: 45%;
+}
+.pin-width{
+    width: 5%;
+}
+.filter-title{
+    width: 100%;
+    font-size: 1rem;
+    background: none;
+    border: none;
+    line-height: 1.6;
+    box-shadow: none;
+    cursor: pointer;
+}
+div.form-group > select.filter-select{
+    width: 100%;
+    font-size: 1rem;
+    background: none;
+    border: none;
+    line-height: 1.6;
+    box-shadow: none;
+    cursor: pointer;
+}
+
+
