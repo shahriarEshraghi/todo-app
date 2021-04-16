@@ -1,4 +1,5 @@
 import React from 'react';
+import pin from '../Assets/image/push-pin.svg';
 
 
 
@@ -25,8 +26,9 @@ import React from 'react';
                     {props.text}
                 </label>
 
-                <label>{props.priorityText}</label>
+                <label>{props.priority}</label>
 
+                <img className='pin' src={pin} alt='pin' />
             </div>
         </React.Fragment>
     );

@@ -7,6 +7,7 @@ const Tasks = (props) => {
             <div className='listTitle'>
                 <p>Task Name</p>
                 <p>Priority</p>
+                <p>Pin</p>
             </div>
             <div className="taskWapper">
                 {props.filteredTodos.map((item) => (
@@ -17,7 +18,6 @@ const Tasks = (props) => {
                         todo={item}
                         text={item.text}
                         priority={item.priority}
-                        priorityText = {props.priorities.find(x=> x.value === +item.priority).name}
                     />
                 ))}
             </div>

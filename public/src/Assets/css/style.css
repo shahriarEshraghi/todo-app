@@ -1,20 +1,24 @@
-*, *:before, *:after {
+*,
+*:before,
+*:after {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
+
 * {
     margin: 0;
     outline: none;
     padding: 0;
     text-decoration: none;
 }
+
 html {
     margin: 0;
     -webkit-text-size-adjust: none;
 }
-body
-{
+
+body {
     font-family: 'Roboto', arial;
     font-size: 16px;
     font-weight: 300;
@@ -31,7 +35,8 @@ div.todoListWapper {
     background-position: center;
     background-repeat: no-repeat;
 }
-div.todoListWapper > div.todoList {
+
+div.todoListWapper>div.todoList {
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -41,79 +46,56 @@ div.todoListWapper > div.todoList {
     transform: translate(-50%, -50%);
     background-color: #ffffff96;
     box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 23%);
-    width: 35%;
-    height: 80vh;
-    padding: 1rem 2rem;
+    width: 40%;
+    padding: 1rem;
     border-radius: 5px;
 }
 
-div.taskWapper > h1{
-    color:#222f3e;
+div.todoList>h1 {
+    color: #222f3e;
     font-weight: 400;
     letter-spacing: -1px;
     word-spacing: -5px;
     text-align: center;
 }
-div.taskWapper > h1> span {
+
+div.todoList>h1>span {
     color: #710AF0;
 }
 
-.completed{
-    opacity: .5;
-    text-decoration: line-through;
- }
- 
+
 .form-group {
-    position: relative;
-    margin-top: 2.25rem;
-    margin-bottom: 2.25rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 1rem 0;
+    width: 30%;
 }
 
 .form-group select {
     width: 100%;
     font-size: 1rem;
-    height: 1.6rem;
-    padding: 0.125rem 0.125rem 0.0625rem;
     background: none;
     border: none;
     line-height: 1.6;
     box-shadow: none;
+    cursor: pointer;
 }
 
 .form-group .control-label {
-    position: absolute;
-    top: 0.25rem;
     pointer-events: none;
-    padding-left: 0.125rem;
     z-index: 1;
     color: #b3b3b3;
     font-size: 1rem;
     font-weight: normal;
-    -webkit-transition: all 0.28s ease;
+    text-transform: uppercase;
     transition: all 0.28s ease;
+    width: 65%;
 }
 
-.form-group .bar {
-    position: relative;
-    border-bottom: 0.0625rem solid #999;
-    display: block;
-}
-
-.form-group .bar::before {
-    content: "";
-    height: 0.125rem;
-    width: 0;
-    left: 50%;
-    bottom: -0.0625rem;
-    position: absolute;
-    background: #070066;
-    -webkit-transition: left 0.28s ease, width 0.28s ease;
-    transition: left 0.28s ease, width 0.28s ease;
-    z-index: 2;
-}
 
 .form-group select {
-    color: #333;
+    color: #070066;
 }
 
 .form-group select~.control-label {
@@ -123,7 +105,7 @@ div.taskWapper > h1> span {
     left: 0;
 }
 
-.form-group select:focus{
+.form-group select:focus {
     outline: none;
 }
 
@@ -136,7 +118,45 @@ div.taskWapper > h1> span {
     left: 0;
 }
 
-.checkbox label{
+.listTitle {
+    display: flex;
+    justify-content: space-between;
+    color: #070066;
+    font-weight: 500;
+    padding: 0 1rem;
+}
+.taskWapper {
+    height: 55vh;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+.taskWapper::-webkit-scrollbar {
+    width: 5px;
+  }
+/* Track */
+.taskWapper::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+.taskWapper::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+.taskWapper::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+.taskWapper::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+.completed{
+    text-decoration:line-through;
+    opacity: 0.5;
+}
+
+.checkbox label {
     position: relative;
     cursor: pointer;
     padding-left: 2rem;
@@ -145,19 +165,20 @@ div.taskWapper > h1> span {
     display: block;
 }
 
-.checkbox input{
+.checkbox input {
     width: auto;
     opacity: 0.00000001;
     position: absolute;
     left: 0;
 }
 
-
-
-
-
 .checkbox {
+    display: flex;
+    justify-content: space-between;
     margin: 1rem 0;
+    background: #C8E8FE;
+    padding: 1rem;
+    border-radius: 5px;
 }
 
 .checkbox .CheckIcon {
@@ -231,46 +252,98 @@ div.taskWapper > h1> span {
     transition-delay: 0.28s;
 }
 
+.pin {
+    width: 3.5%;
+    transform: rotate(-45deg);
+    filter: invert(.5);
+    transition: all .3s;
+    cursor: pointer;
+}
 
-.addTask{
+.addTask {
     display: flex;
     align-items: center;
-    justify-content:space-between;
+    justify-content: space-between;
     background-color: #710AF0;
     padding: .5rem .3rem;
     border-radius: 5px;
     width: 100%;
 }
 
-.addTask input{
+.addTask Button {
+    font-family: 'Roboto';
+    font-size: .9rem;
+    font-weight: 300;
+    padding: 0.5rem 0.5rem;
+    color: white;
+    background-color: #710AF0;
+    border: 0;
+    border-left: solid 1px #4a059e;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.addTask Button:hover {
+    background-color: #4a059e;
+    border-radius: 5px;
+}
+
+.addTask input {
     font-family: 'Roboto';
     font-weight: 300;
-    font-size: 1rem;
+    font-size: .9rem;
     height: 100%;
     border: none;
     border-radius: 5px;
-    padding: 0 .5rem;
+    width: 60%;
+    padding: .5rem;
     background-color: transparent;
     color: white;
+    transition: all .3s;
 }
 
-.addTask input::placeholder{
-    color:white;
+.addTask input:focus {
+    background: #3c136f
+}
+
+.addTask input::placeholder {
+    color: white;
     opacity: 1;
 }
-.addTask div.optionWappers{
+
+.addTask div.optionWappers {
     display: flex;
-    justify-content: space-around;
-    width: 40%;
-}
-.addTask div.givePriority,
-.addTask div.giveColor{
-    margin:0;
-}
-.addTask div.givePriority select{
-    font-family: 'Roboto';
-    font-weight: 300;
-    color:white;
-    background: #710AF0;
+    align-items: center;
+    width: 30%;
 }
 
+.addTask div.givePriority,
+.addTask div.giveColor {
+    margin: 0;
+    margin-right: 1.5rem;
+    width: 100%;
+
+}
+
+.addTask div.givePriority select {
+    font-family: 'Roboto';
+    font-weight: 300;
+    font-size: .9em;
+    cursor: pointer;
+    padding: 0.5rem;
+    color: white;
+    background: #710AF0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.addTask div.givePriority select:hover {
+    background: #3c136f;
+}
+
+.addTask div.giveColor span {
+    width: 10px;
+    height: 10px;
+    background-color: red;
+}
